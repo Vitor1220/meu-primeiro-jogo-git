@@ -1,0 +1,5 @@
+“Quando abrimos um programa ou jogo, os dados primeiro saem  SSD, que é onde tudo fica armazenado permanentemente. Como o SSD é mais lento que a memória principal, essas informações são copiadas para a RAM, que funciona como uma área de acesso rápido.
+
+A partir daí, a CPU pega os dados da RAM, processa  instruções e faz os cálculos necessários. Se houver imagens, vídeos ou gráficos, a CPU envia essas informações para a GPU, que é especializada em renderização visual.
+
+Por fim, a GPU gera  imagens que aparecem na tela. Então, o fluxo acontece basicamente nesta ordem: SSD → RAM → CPU → GPU → monitor.”
