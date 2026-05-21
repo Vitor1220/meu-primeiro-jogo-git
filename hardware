@@ -1,0 +1,10 @@
+escolhemos uma placa-mãe que tem capacidade de aguentar um processador bem forte (que é um ryzen 7 de 8 núcleos)para não nos limitarmos a processadores fracos por isso aplicamos mais recursos nessas áreas para ter melhor desempenho. Além disso, melhoramos o mouse, pois um mouse com uma sensibilidade maior é mais eficiente para jogos rápido, investimos em coolers para evitar superaquecimentos, investimos em armazenamento pois jogos de ultimamente necessitam de bastante armazenamento parra serem baixados e dedicamos mais recursos em placa de vídeo para poder ser utilizado em jogos de mais alta qualidade.
+investimos menos em opcionais pois eles não agregam tanto a jogatina quanto os mencionados anteriormente.
+
+
+Descrição do caminho que as informações seguem
+Quando abrimos um programa ou jogo, os dados primeiro saem do SSD, que é onde tudo fica armazenado permanentemente. Como o SSD é mais lento que a memória principal, essas informações são copiadas para a RAM, que funciona como uma área de acesso rápido.
+
+A partir daí, a CPU pega os dados da RAM, processa as instruções e faz os cálculos necessários. Se houver imagens, vídeos ou gráficos, a CPU envia essas informações para a GPU, que é especializada em renderização visual.
+
+Por fim, a GPU gera as imagens que aparecem na tela. Então, o fluxo acontece basicamente nesta ordem: SSD → RAM → CPU → GPU → monitor.
