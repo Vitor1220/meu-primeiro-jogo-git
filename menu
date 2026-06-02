@@ -1,0 +1,69 @@
+inteiro lmt
+         inteiro opc
+         inteiro opc2
+         cadeia prob
+         enquanto(opc != 6 ){ 
+         escreva("=== CENTRAL DE CONTROLE DO ELEVADOR ===\n")
+         escreva("1 - Relatar um problema no elevador\n")  
+         escreva("2 - Ver câmeras\n")
+         escreva("3 - Sistemas de segurança\n")
+         escreva("4 - Outros\n")
+         escreva("5 - Conferir limite do elevador\n")
+         escreva("6 - Sair\n")
+         escreva("=======================================\n")
+         escreva("Escolha uma opção\n")
+         leia(opc)
+         escolha(opc){
+       
+         caso 1:
+         escreva("Informe o problema a ser relatado:")
+         leia(prob)
+         escreva("Problema relatado com sucesso! Entraremos com providência o mais rápido possível!")
+         escreva("\n\n")
+         pare      
+        
+         caso 2: 
+         escreva("Abrindo as câmeras...")
+         escreva("\n\n")
+         pare
+       
+         caso 3:
+         escreva("=== SISTEMAS DE SEGURANÇA ===\n")
+         escreva("1 - Travar elevador\n") 
+         escreva("2 - Alerta de emergência")
+         escreva("==============================\n")
+         escreva("Escolha uma opção\n")
+         leia(opc2)
+      
+         caso 1:
+         escreva("Travando elevador...")
+         escreva("Elevador travado!")
+         escreva("\n\n")
+         pare
+
+         caso 2:
+         escreva("Emitindo alerta de emergência!")
+         escreva("\n\n")
+         pare
+
+         caso 4:
+         escreva("Abrindo outras opções...")
+         escreva("\n\n")
+         pare
+      
+         caso 5:
+         escreva(" Insira a quantidade de pessoas no elevador:")
+         leia(lmt)
+         
+         caso 6:
+         escreva("Saindo...")
+         escreva("\n\n")
+         pare
+         
+         se(lmt >="6" ){
+         escreva("Limite excedido, pare o elevador!")
+       }
+      }
+    }
+  }
+}
