@@ -1,0 +1,26 @@
+  cadeia nome
+  real valor
+  cadeia endent 
+  real valordes
+  real novovalor
+  escreva("Olá Usuário, entre com seu nome:")
+  leia(nome)
+
+  escreva("Digite o valor da compra:")
+  leia(valor)
+  
+  escreva(nome, ",Qual é o endereço para a entrega?")
+  leia(endent)
+  se(valor >=200) {
+  escreva(nome,", Que legal, você ganhará 10% desconto no frete!")
+  valordes = valor * 0.10
+  novovalor = valor - valordes
+  escreva(nome, "sua compra ficará R$", mat.arredondar(novovalor,2))
+  } senao{
+   escreva(nome,",sua compra não terá desconto.") 
+  }  
+  escreva("\n")
+  escreva(nome,", sua compra será entregue wm até 7 dias úteis em:", endent)
+
+  }
+}
