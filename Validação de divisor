@@ -1,0 +1,21 @@
+programa {
+  inclua biblioteca Matematica --> mat
+  funcao inicio() {
+    cadeia nome
+    inteiro n1,n2,result
+    escreva("olá usuário, insira seu nome: ")
+    leia(nome)
+    escreva(nome,"agora insira o primeiro número: ")
+    leia(n1)
+    se (n1 == 0){
+      escreva(nome," essa divisão é igual a zero.")
+    }
+    escreva("agora insira o segundo número: ")
+    leia(n2)
+    se(n2 == 0){
+      escreva(nome," esse número é igual a Zero")
+    }
+    result = n1 / n2
+    escreva(nome,"o resultado da divisão é: ",result)
+  }
+}
