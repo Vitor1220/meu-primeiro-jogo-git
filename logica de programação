@@ -1,0 +1,466 @@
+programa {
+ funcao inicio() {
+    inteiro i
+
+
+    para(i = 1;i <= 50 ;i++){
+      escreva("\n",i,".")
+    }
+    
+  }
+}
+
+programa {
+  funcao inicio() {
+    inteiro n , n_soma
+    n_soma = 0
+
+    enquanto(n != 0){
+    escreva("Insira um número: ")
+    leia(n)
+    n_soma = n_soma + n
+    }
+    escreva("a soma dos números é:",n_soma)
+  }
+}
+
+programa {
+  funcao inicio() {
+    inteiro ju7jju
+
+    escreva ("por favor insira sua idade")
+    leia(ju7jju)
+    se(ju7jju > 0 ou ju7jju < 120){
+      escreva("Seus dados estão validados")
+    }senao{
+      escreva("Idade Inválida")
+    }
+  }
+
+programa {
+  inclua biblioteca Matematica --> mat
+  funcao inicio() {
+    real media=0, nota=0, soma = 0,qtd=0
+    
+    enquanto(nota >= -1){
+      escreva("insira a nota do aluno: ")
+      leia(nota)
+      se(nota >= 0){
+      qtd = qtd + 1
+      soma = soma + nota
+      }senao{
+        
+      }
+    }
+    media = soma/qtd
+    escreva("a media das notas é: ",media)
+  }
+}
+programa {
+  funcao inicio() {
+    inteiro lmt
+         inteiro opc
+         inteiro opc2
+         cadeia prob
+         enquanto(opc != 6 ){ 
+         escreva("=== CENTRAL DE CONTROLE DO ELEVADOR ===\n")
+         escreva("1 - Relatar um problema no elevador\n")  
+         escreva("2 - Ver câmeras\n")
+         escreva("3 - Sistemas de segurança\n")
+         escreva("4 - Outros\n")
+         escreva("5 - Conferir limite do elevador\n")
+         escreva("6 - Sair\n")
+         escreva("=======================================\n")
+         escreva("Escolha uma opção:\n")
+         leia(opc)
+         escolha(opc){
+       
+         caso 1:
+         escreva("Informe o problema a ser relatado:")
+         leia(prob)
+         escreva("Problema relatado com sucesso! Entraremos com providência o mais rápido possível!")
+         escreva("\n\n")
+         pare      
+        
+         caso 2: 
+         escreva("Abrindo as câmeras...")
+         escreva("\n\n")
+         pare
+       
+         caso 3:
+         escreva("Abrindo sistema de segurança...")
+         escreva("\n\n")
+         caso 4:
+         escreva("Abrindo outras opções...")
+         escreva("\n\n")
+         pare
+      
+         caso 5:
+         escreva(" Insira a quantidade de pessoas no elevador:")
+         leia(lmt)
+         se(lmt >="6" ){
+         escreva("Limite excedido, pare o elevador!")
+         }senao{
+          escreva("Está dentro do limite")
+         }
+         pare
+
+        caso 6:
+         escreva("Saindo...")
+         escreva("\n\n")
+         pare
+        caso contrario:
+        escreva("Opção inválida tente novamente")
+        escreva("\n\n")
+
+      }
+    }
+  }
+}
+programa {
+  funcao inicio() {
+    inteiro maior = 0 , menor = 100000000000000000000000 , cont = 1 , num , quantidade
+    escreva("insira a quantidade de números que seram inseridos:")
+    leia (quantidade)
+    escreva("\n")
+    enquanto(cont <= quantidade){
+      escreva("insira o ",cont,"º número:\n")
+      leia(num)
+      cont = cont + 1
+      se(num > maior){
+        maior = num
+      }
+      se(num < menor){
+        menor = num
+      }
+    }
+    escreva("o maior número é:",maior,"\n")
+    escreva("o menor número é:",menor,"\n")
+  }
+}
+
+programa {
+  inclua biblioteca Matematica --> Mat
+  funcao inicio() {
+    inteiro a = 80000 , b = 200000 , anos= 0
+    
+
+    enquanto (a < b){
+      anos = anos + 1
+      a = a * 1.03
+      b = b * 1.015
+      
+    }
+    escreva("em ",anos," anos a cidade A superará a B")
+
+    
+  }
+}
+programa {
+  inclua biblioteca Matematica --> mat
+  funcao inicio() {
+    real media=0, idades=0, soma = 0,qtd=0
+    
+    enquanto(idades >= -1){
+      escreva("insira a nota do aluno: ")
+      leia(idades)
+      se(idades >= 0){
+      qtd = qtd + 1
+      soma = soma + idades
+      }senao{
+        
+      }
+    }
+    media = soma/qtd
+    escreva("a media das idades é: ",media)
+  }
+}
+programa {
+  funcao inicio() {
+    inteiro n1,n2
+    
+
+    escreva("Insira um número:")
+    leia(n1)
+    escreva("Insira outro número:")
+    leia(n2)
+    enquanto(n1 < n2){
+      se(n1 % 2 == 0){
+        escreva(n1," ")
+      }
+      n1 = n1 + 1
+      
+    }
+
+
+  }
+}
+programa {
+  funcao inicio() {
+    inteiro altura ,contador=0 , maior=0,menor = 9999999999999999999999999999999999999999999999
+
+    
+    enquanto(contador != 10){
+      contador = contador + 1
+    escreva("Insira a altura da ",contador,"º pessoa(em centímetros):")
+    leia(altura)
+    se(altura > maior){
+      maior = altura
+    }
+    se(altura < menor){
+      menor = altura
+     }   
+    }
+    escreva("A menor altura das inseridas é:", menor,"\n" )
+    escreva("A maior altura das inseridas é:",maior)
+  }
+}
+programa {
+  funcao inicio() {
+    cadeia nome, nome_vencedora
+    inteiro nota, i , nota_maior = 0
+
+    para(i = 1; i <= 5; i++){
+      escreva("Insira o nome da candidata:")
+      leia(nome)
+      escreva("insira a nota da candidata:")
+      leia(nota)
+      se(nota > nota_maior){
+      nota_maior = nota
+      nome_vencedora = nome
+      }
+    }
+    escreva("A vencedora do concurso é: ",nome_vencedora)
+    escreva("\ne sua nota foi: ",nota_maior)
+  }
+}
+programa {
+  funcao inicio() {
+    inteiro temp1,temp2
+    cadeia medida
+    
+    
+
+    escreva("Insira de qual medida será convertida e para qual(C para F ou F para C):")
+    leia(medida)
+    se(medida == "c para f" ou medida == "C para F"){
+      escreva("Agora insira a temperatura em Celsius:")
+      leia(temp1)
+      temp2 = ((temp1 * 9) / 5 ) + 32
+    } senao{
+      se(medida == "F para C" ou medida == "f para c"){
+        escreva("Agora insira a temperatura em Fairenheit:")
+        leia(temp1)
+       temp2 = ((temp1 - 32) * 5) / 9 
+      }senao{
+        escreva("Medidas de conversão incorretas, tente novamente")
+      }
+    }
+  escreva ("o resultado da conversão é:", temp2)
+
+  }
+}
+programa {
+  inclua biblioteca Util --> Ult
+  funcao inicio() {
+    inteiro numero_de_rodadas,contador = 1
+    cadeia opc1,opc2
+
+    escreva("Insira o número de rodads que serão jogadas: ")
+    leia(numero_de_rodadas)
+    enquanto(contador <= numero_de_rodadas){
+      escreva(contador,"ª rodada\n \n")
+      escreva("Obs:escreva tudo em minúsculo\n")
+      escreva("Insira a opção do primeiro jogador(pedra,papel ou tesoura):")
+      leia(opc1)
+      escreva("Insira a opção do segundo jogador:")
+      leia(opc2)
+      limpa()
+      se(opc1 == "pedra" e opc2 == "pedra"){
+        escreva("deu empate")
+      }
+      se(opc1 == "pedra" e opc2 == "tesoura"){
+        escreva("jogador 1 venceu")
+      }
+      se(opc1 == "pedra" e opc2 == "papel"){
+        escreva("jogador 2 venceu")
+      }
+      se(opc1 == "tesoura" e opc2 == "pedra"){
+        escreva("jogador 2 venceu")
+      }
+      se(opc1 == "tesoura" e opc2 == "tesoura"){
+        escreva("Deu empate")
+      }
+      se(opc1 == "tesoura" e opc2 == "papel"){
+        escreva("jogador 1 venceu")
+      }
+      se(opc1 == "papel" e opc2 == "pedra"){
+        escreva("jogador 1 venceu")
+      }
+      se(opc1 == "papel" e opc2 == "tesoura"){
+        escreva("jogador 2 venceu")
+      }
+      se(opc1 == "papel" e opc2 == "papel"){
+        escreva("Deu empate")
+      }
+      se(contador == numero_de_rodadas){
+      }senao{
+        escreva("\n indo para a próxima rodada")
+      }
+      contador = contador + 1
+      Ult.aguarde(3000)
+      limpa()
+      
+    }   
+    escreva("fim de jogo(game over)")
+  }
+}
+programa {
+  funcao inicio() {
+    real tempo, valor
+
+    escreva("Insira a quanto tempo você está estacionado(em horas aproximadamente):")
+    leia(tempo)
+    se(tempo <= 1){
+      valor = 5
+    }senao{
+      valor = ((tempo - 1)*2) + 5
+    }
+    escreva("O valor de sua estadia deu:R$",valor,".00")
+
+  }
+}
+programa {
+  funcao inicio() {
+    inteiro codigo
+
+
+    escreva("insira o código do produto")
+    leia(codigo)
+    se(codigo > 1 e codigo <= 10){
+      escreva("este código corresponde aos perecíveis")
+    }senao{
+      se(codigo <=20){
+        escreva("este código corresponde aos eletrônicos")
+      }senao{
+        escreva("Código inválido, tente novamente")
+      }
+    }
+
+  }
+}
+programa {
+  funcao inicio() {
+    inteiro a, b , anos= 0
+    
+    escreva("Insira a população do país A:")
+    leia(a)
+    escreva("Insira a população do país B(menos do que a):")
+    leia(b)
+    enquanto (a > b){
+      anos = anos + 1
+      a = a * 1.02
+      b = b * 1.03
+      
+    }
+    escreva("em ",anos," anos a cidade A superará a B")
+
+    
+  }
+}
+
+não consegui fazer o 17 pq o próximo ja é o 18.
+
+
+
+programa {
+  funcao inicio() {
+    inteiro opc = 9, n1, n2
+    
+    real adicao, subtracao,multiplicacao ,divisao
+    
+    enquanto(opc != 0){
+    
+    escreva("=======CALCULADORA=======\n")
+    escreva("1-ADIÇÃO ++++++++++++++++\n")
+    escreva("2-SUBTRAÇÃO -------------\n")
+    escreva("3-MULTIPLICAÇÃO *********\n")
+    escreva("4-DIVISÃO ///////////////\n")
+    escreva("0-sair===================\n")
+    escreva("=========================\n")
+    escreva("insira o número correspondente a ação que deseja realizar:")
+    leia(opc)
+    
+    escolha(opc){
+    caso 1:
+
+    escreva("insira o primeiro número:")
+    leia(n1)
+    escreva("Insira o segundo numero:")
+    leia(n2)
+    adicao = n1 + n2
+    pare
+    caso 2:
+
+    escreva("Insira o primeiro número:")
+    leia(n1)
+    escreva("Insira o segunda número:")
+    leia(n2)
+    subtracao = n1 - n2
+    pare
+    caso 3:
+
+    escreva("insira o primeiro número:")
+    leia(n1)
+    escreva("Insira o segundo numero:")
+    leia(n2)
+    multiplicacao = n1 * n2
+    pare
+    caso 4:
+    
+    escreva("Insira o primeiro número:")
+    leia(n1)
+    escreva("Insira o segunda número:")
+    leia(n2)
+    divisao = n1 / n2
+    pare
+
+
+    caso contrario:
+      escreva("opção inválida, tente novamente\n\n")
+      
+      }
+    }
+  }
+}
+programa {
+  funcao inicio() {
+    inteiro i 
+
+    para(i = 100;i >= 1 ; i--){
+      se(i % 2 == 0){
+        escreva(i,".\n")
+      }
+
+
+    }  
+  }
+}
+programa {
+  funcao inicio() {
+    inteiro x,y,soma=0
+
+    escreva("Insira o primeiro número:")
+    leia(x)
+    escreva("Insira o segundo número(maior que o primeiro):")
+    leia(y)
+    enquanto(y > x){
+      se(x % 2 != 0){
+        soma = soma + x
+      }
+      x = x + 1
+    }
+    escreva("a soma dos números ímpares nesse intervalo é:",soma)
+    
+  }
+}
