@@ -368,10 +368,27 @@ programa {
     
   }
 }
+programa {
+  inclua biblioteca texto --> tx
+  funcao inicio() {
 
-não consegui fazer o 17 pq o próximo ja é o 18.
+    cadeia nome
+    inteiro qtd, senha,qtds
 
-
+    escreva("Olá, por favor insira o seu nome:")
+    leia(nome)
+    qtd = tx.numero_de_caracteres(nome)
+    se(qtd < 3){
+      escreva("Nome cadastrado inválido,\nmotivo:nome muito pequeno\ntente novamente")
+    }
+    escreva("Bem vindo(a) ",nome,", por favor, agora cadastre sua senha:")
+    leia(senha)
+    qtds = tx.numero_de_caracteres(senha)
+    se(qtds < 8){
+      escreva("Senha cadastrada inválida,\nmotivo:senha precisa ter 8 ou mais caractéres,\npor favor ",nome," tente novamente")
+    }
+  }
+}
 
 programa {
   funcao inicio() {
