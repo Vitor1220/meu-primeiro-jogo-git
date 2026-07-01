@@ -1,0 +1,98 @@
+programa {
+  inclua biblioteca Util --> ut
+  inclua biblioteca Texto --> tx
+  funcao inicio() {
+    inteiro i, opc, opc1, opc2, opc3, opc4, opc5
+    cadeia nome,arma
+    enquanto(opc!=4){
+      limpa()
+    para(i = 0;i < 36; i++){
+      escreva("=")
+      se(i == 18){
+        escreva(" Menu inicial ")
+      }
+    }
+    escreva("\n1.Jogar")
+    escreva("\n2.Menu de personagens")
+    escreva("\n3.creditos")
+    escreva("\n4.Sair\n")
+    leia(opc)
+    escolha(opc){
+    caso 1:
+    limpa()
+    escreva()
+
+
+
+    pare
+    caso 2:
+    limpa()
+    para(i = 0;i<36;i++){
+      escreva("=")
+      se(i == 18){
+        escreva("Menu de personagens")
+      }
+    }
+    escreva("\n1.Personagens prontos")
+    escreva("\n2.personagem customizado")
+    leia(opc1)
+    escolha(opc1){
+    caso 1:
+    limpa()
+    escreva("\n1.Michael Jackson") //Rei do pop
+    escreva("\n2.Solid Snake") //metal gear solid
+    escreva("\n3.Undyne") //undertale
+    escreva("\n4.Le'garde") //fear and hunger
+    escreva("\n5.Miwa") //jujutsu kaisen
+      
+    caso 2:
+    limpa()
+    para(i = 0; i <36;i++){
+      escreva("=")
+      se(i == 18){
+        escreva(" Menu de personagem customizado ")
+      }
+    }
+    enquanto(opc2 != 3){
+      escreva("\n1.nome:",nome)
+      escreva("\n2.arma(opcional):",arma)
+      escreva("\n3.Voltar para o menu principal:")
+      leia(opc2)
+      escolha(opc2){
+        caso 1:
+        limpa()
+        escreva("Insira o nome do personagem(por favor, nada inapropriado):")
+        leia(nome)
+        pare
+        caso 2:
+        para(i = 0; i < 40; i++){
+          escreva("=")
+          se(i == 20){
+            escreva("Arsenal")
+          }
+        }
+        escreva("1. espada") 
+        escreva("2. faca")
+        escreva("3. armas de fogo")
+        escreva("4. arco e flecha(atenção você começará com somente 10 flechas)")
+        escreva("5. cajado")
+        escreva("6. O PODER DA AMIZADE")
+        escreva("Digite 7 para uma descrição de todos os poderes de cada arma")
+        leia(opc3)
+      }
+    }
+
+
+      }
+      caso 3:
+      limpa()
+      escreva("Desenvolvedor:Vitor")
+      escreva("\nMente criativa:Sophia e Vitor")
+      escreva("\nProgramador: Vitor")
+      escreva("\nMenção honrosa: todos os 'the inabaláveis' \n\n\nem especial:Sophia, Eduardo e Gabriela\n")
+      
+      pare    
+    }
+   }
+  }
+}
