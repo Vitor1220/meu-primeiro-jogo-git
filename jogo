@@ -1,16 +1,16 @@
-    programa {
+  programa {
   inclua biblioteca Util --> ut
   inclua biblioteca Texto --> tx
   funcao inicio() {
     inteiro i, opc, opc1, opc2, opc3 = 7, opc4, opc5, opc6
-    inteiro esp[5],qti[5]
-    cadeia nome,arma
+    inteiro qti[5]
+    cadeia nome,arma,esp[5]
     enquanto(opc!=5){
       limpa()
     para(i = 0;i < 36; i++){
       escreva("=")
       se(i == 18){
-        escreva(" Menu inicial ")
+        escreva(" Primeiro Guerreiro Mundial(nome só de exemplo do jogo) ")
       }
     }
     escreva("\n1.Jogar")
@@ -23,6 +23,8 @@
     caso 1:
     limpa()
     escreva()
+    escreva("você encontra um guarda no meio do caminho")
+    escreva()
 
 
 
@@ -30,38 +32,17 @@
     pare
     caso 2:
     limpa()
-    para(i = 0;i<36;i++){
-      escreva("=")
-      se(i == 18){
-        escreva("Menu de personagens")
-      }
-    }
-    escreva("\n1.Personagens prontos()")
-    escreva("\n2.personagem customizado\n")
-    leia(opc1)
-    escolha(opc1){
-    caso 1:
-    limpa()
-    escreva("\n1.Michael Jackson") //Rei do pop
-    escreva("\n2.Solid Snake") //metal gear solid
-    escreva("\n3.Undyne") //undertale
-    escreva("\n4.Le'garde") //fear and hunger
-    escreva("\n5.Miwa\n") //jujutsu kaisen
-    leia(opc4)
-      
-    caso 2:
-    limpa()
     para(i = 0; i <36;i++){
       escreva("=")
       se(i == 18){
-        escreva(" Menu de personagem customizado ")
+        escreva(" Menu de criação de personagem ")
       }
     }
     enquanto(opc2 != 3){
       limpa()
       escreva("\n1.nome:",nome)
       escreva("\n2.arma(opcional):",arma)
-      escreva("\n3.Voltar para o menu principal:")
+      escreva("\n3.ir para o menu de itens utilizáveis:")
       leia(opc2)
       escolha(opc2){
        
@@ -114,25 +95,96 @@
           escreva("\nArma de fogo: uma arma de longo alcance e precisão perfeita,dano altíssimo, porém precisa de dois turnos para limpar e recarregar(se arma não for limpa tem chance de explodir e causar morte instantânea), mas é uma arma muito recomendada para iniciantes")
           escreva("\nArco e flecha: longo alcance número limitado de munições, porém danos letais, além de tiros não serem certeiros,flechas causam hemorragia,impedindo o inimigo de se curar começará com 20 flechas e após uma batalha recarregará as flechas e ")
           escreva("\nCajado: ataque de longo de alcance (fogo:dano alto, porém te deixa vulnerável por 1 turno. raio:dano médio, e deixa o inimigo paralisado por 1 turno. gelo:dano baixo, porém congela o inimigo por 2 turnos e o deixa lento)")
-          escreva("\nO PODER DA AMIZADE:dano baixíssimo, porém quando ficar com vida baixa seu dano aumenta para dano alto. Além disso, poderá sobreviver a um ataque letal com 1 de vida,recomendado para jogadores que são muito muito ruins")            
+          escreva("\nO PODER DA AMIZADE:dano baixíssimo, porém quando ficar com vida baixa seu dano aumenta para dano alto. Além disso, poderá sobreviver a um ataque letal com 1 de vida e dar um soco que tem 70% de chance de dar morte instantânea,recomendado para jogadores que são muito muito ruins")            
           ut.aguarde(5000)
             }
           }
+          caso 3:
+          limpa()
+          escreva("indo para o menu de itens utilizáveis...")
+          ut.aguarde(1000)
         }
       }
-    }
+    
       caso 3:
       limpa()
-      escreva("\nEspaço 1:",esp[0])
-      escreva("\nEspaço 2:",esp[1])
-      escreva("\nEspaço 3:",esp[2])
-      escreva("\nEspaço 4:",esp[3])
-      escreva("\nEspaço 5:",esp[4])
+      enquanto(opc5 != 6){
+      escreva("Espaço 1:",esp[0]," ",qti[0])
+      escreva("\nEspaço 2:",esp[1]," ",qti[1])
+      escreva("\nEspaço 3:",esp[2]," ",qti[2])
+      escreva("\nEspaço 4:",esp[3]," ",qti[3])
+      escreva("\nEspaço 5:",esp[4]," ",qti[4])
       escreva("\nEscreva o número do espaço para adicionar um item")
       escreva("\nEscreva 6 para voltar para o menu\n")
       leia(opc5)
+      limpa()
       escolha(opc5){
         caso 1:
+       escreva("1.caixa do snake - te deixa invisível por 1 turno")
+       escreva("\n2.kit de primeiros socorros - cura a metade da vida ,se estiver com hemorragia cura ela ,mas não regenera vida")
+       escreva("\n3.bomba - causa dano alto a todos os seres na batalha(incluindo você mesmo)")
+       escreva("\n4.pão - tira a fome e cura 3 de vida")
+       escreva("\n5.enegético - te faz atacar primeiro por 3 turnos e faz você ter chance de atacar duas vezes")
+       escreva("\n6.veneno - pode colocar em certas armas para fazer elas terem o efeito de veneno e você pode tomar")
+       escreva("\n7.bomba de fumaça - diminui a precisão sua e do seu inimigo por 2 turnos,exceto quando tiver com arma de perto e aumenta a chance de escapar")
+       escreva("\n8.bomba de luz - deixa o inimigo sem precisão alguma por 1 turno, porém tem chance de fazer você também ficar sem precisão")
+       escreva("\n9.bandagem - pode curar 25% da vida e se estiver com hemorragia cura 5% da vida e tira a hemorragia")
+       escreva("\n10.antídoto - tira a paralisia ")
+       escreva("\nInsira o número do item que você deseja adicionar para esse espaço:")
+       leia(opc6)
+       escolha(opc6){
+        caso 1:
+        limpa()
+        escreva("Agora insira a quantidade desse item(no máximo 1):")
+        leia(qti[0])
+        esp[4] = "caixa do snake"
+        caso 2:
+        limpa()
+        escreva("Agora insira a quantidade desse item(no máximo 3):")
+        leia(qti[0])
+        esp[0] = "kit de primeiros socorros"
+        caso 3:
+        limpa()
+        escreva("Agora insira a quantidade desse item(no máximo 10, porém recomendado não mais que 2):")
+        leia(qti[0])
+        esp[0] = "bomba"
+        caso 4:
+        limpa()
+        escreva("Agora insira a quantidade desse item(no máximo 35):")
+        leia(qti[0])
+        esp[0] = "pão"
+        caso 5:
+        limpa()
+        escreva("Agora insira a quantidade desse item(no máximo 10):")
+        leia(qti[0])
+        esp[0] = "energético"
+        caso 6:
+        limpa()
+        escreva("Agora insira a quantidade desse item(no máximo 5):")
+        leia(qti[0])
+        esp[0] = "veneno"
+        caso 7:
+        limpa()
+        escreva("Agora insira a quantidade desse item(no máximo 4):")
+        leia(qti[0])
+        esp[0] = "bomba de fumaça"
+        caso 8:
+        limpa()
+        escreva("Agora insira a quantidade desse item(no máximo 10):")
+        leia(qti[0])
+        esp[0] = "bomba de luz"
+        caso 9:
+        limpa()
+        escreva("Agora insira a quantidade desse item(no máximo 20):")
+        leia(qti[0])
+        esp[0] = "bandagem"
+        caso 10:
+        limpa()
+        escreva("Agora insira a quantidade desse item(no máximo 5):")
+        leia(qti[0])
+        esp[0] = "antídoto"
+        }
+        caso 2:
        escreva("1.caixa do snake - te deixa invisível por 1 turno")
        escreva("\n2.kit de primeiros socorros - cura a metade da vida ,se estiver com hemorragia cura ela ,mas não regenera vida")
        escreva("\n3.bomba - causa dano alto a todos os seres na batalha(incluindo você mesmo)")
@@ -148,11 +200,255 @@
        leia(opc6)
        escolha(opc6){
         caso 1:
-        
-       }
-        
-
-
+        limpa()
+        escreva("Agora insira a quantidade desse item(no máximo 1):")
+        leia(qti[1])
+        esp[1] = "caixa do snake"
+        caso 2:
+        limpa()
+        escreva("Agora insira a quantidade desse item(no máximo 3):")
+        leia(qti[1])
+        esp[1] = "kit de primeiros socorros"
+        caso 3:
+        limpa()
+        escreva("Agora insira a quantidade desse item(no máximo 10, porém recomendado não mais que 2):")
+        leia(qti[1])
+        esp[1] = "bomba"
+        caso 4:
+        limpa()
+        escreva("Agora insira a quantidade desse item(no máximo 35):")
+        leia(qti[1])
+        esp[1] = "pão"
+        caso 5:
+        limpa()
+        escreva("Agora insira a quantidade desse item(no máximo 10):")
+        leia(qti[1])
+        esp[1] = "energético"
+        caso 6:
+        limpa()
+        escreva("Agora insira a quantidade desse item(no máximo 5):")
+        leia(qti[1])
+        esp[1] = "veneno"
+        caso 7:
+        limpa()
+        escreva("Agora insira a quantidade desse item(no máximo 4):")
+        leia(qti[1])
+        esp[1] = "bomba de fumaça"
+        caso 8:
+        limpa()
+        escreva("Agora insira a quantidade desse item(no máximo 10):")
+        leia(qti[1])
+        esp[1] = "bomba de luz"
+        caso 9:
+        limpa()
+        escreva("Agora insira a quantidade desse item(no máximo 20):")
+        leia(qti[1])
+        esp[1] = "bandagem"
+        caso 10:
+        limpa()
+        escreva("Agora insira a quantidade desse item(no máximo 5):")
+        leia(qti[1])
+        esp[1] = "antídoto"
+        }
+        caso 3:
+       escreva("1.caixa do snake - te deixa invisível por 1 turno")
+       escreva("\n2.kit de primeiros socorros - cura a metade da vida ,se estiver com hemorragia cura ela ,mas não regenera vida")
+       escreva("\n3.bomba - causa dano alto a todos os seres na batalha(incluindo você mesmo)")
+       escreva("\n4.pão - tira a fome e cura 3 de vida")
+       escreva("\n5.enegético - te faz atacar primeiro por 3 turnos e faz você ter chance de atacar duas vezes")
+       escreva("\n6.veneno - pode colocar em certas armas para fazer elas terem o efeito de veneno e você pode tomar")
+       escreva("\n7.bomba de fumaça - diminui a precisão sua e do seu inimigo por 2 turnos,exceto quando tiver com arma de perto e aumenta a chance de escapar")
+       escreva("\n8.bomba de luz - deixa o inimigo sem precisão alguma por 1 turno, porém tem chance de fazer você também ficar sem precisão")
+       escreva("\n9.bandagem - pode curar 25% da vida e se estiver com hemorragia cura 5% da vida e tira a hemorragia")
+       escreva("\n10.antídoto - tira a paralisia ")
+       escreva("\n11.antidoto cura-tudo - tira a paralisia e o veneno,porém deixa com precisão reduzida por 1 turno")
+       escreva("\nInsira o número do item que você deseja adicionar para esse espaço:")
+       leia(opc6)
+       escolha(opc6){
+        caso 1:
+        limpa()
+        escreva("Agora insira a quantidade desse item(no máximo 1):")
+        leia(qti[2])
+        esp[2] = "caixa do snake"
+        caso 2:
+        limpa()
+        escreva("Agora insira a quantidade desse item(no máximo 3):")
+        leia(qti[2])
+        esp[2] = "kit de primeiros socorros"
+        caso 3:
+        limpa()
+        escreva("Agora insira a quantidade desse item(no máximo 10, porém recomendado não mais que 2):")
+        leia(qti[2])
+        esp[2] = "bomba"
+        caso 4:
+        limpa()
+        escreva("Agora insira a quantidade desse item(no máximo 35):")
+        leia(qti[2])
+        esp[2] = "pão"
+        caso 5:
+        limpa()
+        escreva("Agora insira a quantidade desse item(no máximo 10):")
+        leia(qti[2])
+        esp[2] = "energético"
+        caso 6:
+        limpa()
+        escreva("Agora insira a quantidade desse item(no máximo 5):")
+        leia(qti[2])
+        esp[2] = "veneno"
+        caso 7:
+        limpa()
+        escreva("Agora insira a quantidade desse item(no máximo 4):")
+        leia(qti[2])
+        esp[2] = "bomba de fumaça"
+        caso 8:
+        limpa()
+        escreva("Agora insira a quantidade desse item(no máximo 10):")
+        leia(qti[2])
+        esp[2] = "bomba de luz"
+        caso 9:
+        limpa()
+        escreva("Agora insira a quantidade desse item(no máximo 20):")
+        leia(qti[2])
+        esp[2] = "bandagem"
+        caso 10:
+        limpa()
+        escreva("Agora insira a quantidade desse item(no máximo 5):")
+        leia(qti[2])
+        esp[2] = "antídoto"
+        }
+        caso 4:
+       escreva("1.caixa do snake - te deixa invisível por 1 turno")
+       escreva("\n2.kit de primeiros socorros - cura a metade da vida ,se estiver com hemorragia cura ela ,mas não regenera vida")
+       escreva("\n3.bomba - causa dano alto a todos os seres na batalha(incluindo você mesmo)")
+       escreva("\n4.pão - tira a fome e cura 3 de vida")
+       escreva("\n5.enegético - te faz atacar primeiro por 3 turnos e faz você ter chance de atacar duas vezes")
+       escreva("\n6.veneno - pode colocar em certas armas para fazer elas terem o efeito de veneno e você pode tomar")
+       escreva("\n7.bomba de fumaça - diminui a precisão sua e do seu inimigo por 2 turnos,exceto quando tiver com arma de perto e aumenta a chance de escapar")
+       escreva("\n8.bomba de luz - deixa o inimigo sem precisão alguma por 1 turno, porém tem chance de fazer você também ficar sem precisão")
+       escreva("\n9.bandagem - pode curar 25% da vida e se estiver com hemorragia cura 5% da vida e tira a hemorragia")
+       escreva("\n10.antídoto - tira a paralisia ")
+       escreva("\n11.antidoto cura-tudo - tira a paralisia e o veneno,porém deixa com precisão reduzida por 1 turno")
+       escreva("\nInsira o número do item que você deseja adicionar para esse espaço:")
+       leia(opc6)
+       escolha(opc6){
+        caso 1:
+        limpa()
+        escreva("Agora insira a quantidade desse item(no máximo 1):")
+        leia(qti[3])
+        esp[3] = "caixa do snake"
+        caso 2:
+        limpa()
+        escreva("Agora insira a quantidade desse item(no máximo 3):")
+        leia(qti[3])
+        esp[3] = "kit de primeiros socorros"
+        caso 3:
+        limpa()
+        escreva("Agora insira a quantidade desse item(no máximo 10, porém recomendado não mais que 2):")
+        leia(qti[3])
+        esp[3] = "bomba"
+        caso 4:
+        limpa()
+        escreva("Agora insira a quantidade desse item(no máximo 35):")
+        leia(qti[3])
+        esp[3] = "pão"
+        caso 5:
+        limpa()
+        escreva("Agora insira a quantidade desse item(no máximo 10):")
+        leia(qti[3])
+        esp[3] = "energético"
+        caso 6:
+        limpa()
+        escreva("Agora insira a quantidade desse item(no máximo 5):")
+        leia(qti[3])
+        esp[3] = "veneno"
+        caso 7:
+        limpa()
+        escreva("Agora insira a quantidade desse item(no máximo 4):")
+        leia(qti[3])
+        esp[3] = "bomba de fumaça"
+        caso 8:
+        limpa()
+        escreva("Agora insira a quantidade desse item(no máximo 10):")
+        leia(qti[3])
+        esp[3] = "bomba de luz"
+        caso 9:
+        limpa()
+        escreva("Agora insira a quantidade desse item(no máximo 20):")
+        leia(qti[3])
+        esp[3] = "bandagem"
+        caso 10:
+        limpa()
+        escreva("Agora insira a quantidade desse item(no máximo 5):")
+        leia(qti[3])
+        esp[3] = "antídoto"
+        }
+        caso 5:
+       escreva("1.caixa do snake - te deixa invisível por 1 turno")
+       escreva("\n2.kit de primeiros socorros - cura a metade da vida ,se estiver com hemorragia cura ela ,mas não regenera vida")
+       escreva("\n3.bomba - causa dano alto a todos os seres na batalha(incluindo você mesmo)")
+       escreva("\n4.pão - tira a fome e cura 3 de vida")
+       escreva("\n5.enegético - te faz atacar primeiro por 3 turnos e faz você ter chance de atacar duas vezes")
+       escreva("\n6.veneno - pode colocar em certas armas para fazer elas terem o efeito de veneno e você pode tomar")
+       escreva("\n7.bomba de fumaça - diminui a precisão sua e do seu inimigo por 2 turnos,exceto quando tiver com arma de perto e aumenta a chance de escapar")
+       escreva("\n8.bomba de luz - deixa o inimigo sem precisão alguma por 1 turno, porém tem chance de fazer você também ficar sem precisão")
+       escreva("\n9.bandagem - pode curar 25% da vida e se estiver com hemorragia cura 5% da vida e tira a hemorragia")
+       escreva("\n10.antídoto - tira a paralisia ")
+       escreva("\n11.antidoto cura-tudo - tira a paralisia e o veneno,porém deixa com precisão reduzida por 1 turno")
+       escreva("\nInsira o número do item que você deseja adicionar para esse espaço:")
+       leia(opc6)
+       escolha(opc6){
+        caso 1:
+        limpa()
+        escreva("Agora insira a quantidade desse item(no máximo 1):")
+        leia(qti[4])
+        esp[4] = "caixa do snake"
+        caso 2:
+        limpa()
+        escreva("Agora insira a quantidade desse item(no máximo 3):")
+        leia(qti[4])
+        esp[4] = "kit de primeiros socorros"
+        caso 3:
+        limpa()
+        escreva("Agora insira a quantidade desse item(no máximo 10, porém recomendado não mais que 2):")
+        leia(qti[4])
+        esp[4] = "bomba"
+        caso 4:
+        limpa()
+        escreva("Agora insira a quantidade desse item(no máximo 35):")
+        leia(qti[4])
+        esp[4] = "pão"
+        caso 5:
+        limpa()
+        escreva("Agora insira a quantidade desse item(no máximo 10):")
+        leia(qti[4])
+        esp[4] = "energético"
+        caso 6:
+        limpa()
+        escreva("Agora insira a quantidade desse item(no máximo 5):")
+        leia(qti[4])
+        esp[4] = "veneno"
+        caso 7:
+        limpa()
+        escreva("Agora insira a quantidade desse item(no máximo 4):")
+        leia(qti[4])
+        esp[4] = "bomba de fumaça"
+        caso 8:
+        limpa()
+        escreva("Agora insira a quantidade desse item(no máximo 10):")
+        leia(qti[4])
+        esp[4] = "bomba de luz"
+        caso 9:
+        limpa()
+        escreva("Agora insira a quantidade desse item(no máximo 20):")
+        leia(qti[4])
+        esp[4] = "bandagem"
+        caso 10:
+        limpa()
+        escreva("Agora insira a quantidade desse item(no máximo 5):")
+        leia(qti[4])
+        esp[4] = "antídoto"
+        }
+       }      
       }
 
       caso 4:
@@ -162,8 +458,17 @@
       escreva("\nProgramador: Vitor")
       escreva("\nMenção honrosa: todos os 'the inabaláveis' \n\n\nem especial:Sophia, Eduardo e Gabriela\n")
       
-      pare    
-    }
-   }
+      pare
+      caso 5:
+      limpa()
+      escreva("Muito obrigado por jogar nosso jogo\n e até a próxima")    
+      pare
+      
+
+      }
+    } 
   }
+}
+funcao inteiro sorteia(a,b){
+  ut.sorteia(a,b)
 }
