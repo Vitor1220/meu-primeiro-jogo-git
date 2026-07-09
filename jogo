@@ -84,7 +84,7 @@
             ut.aguarde(3000)
              dano = ut.sorteia(15,25)
             vidaop = vidaop - dano
-            escreva("você ataca o novamente guarda e dá:",dano)
+            escreva("\nvocê ataca o novamente guarda e dá:",dano)
             ut.aguarde(3000)
           }senao{
             se(arma == "arma de fogo"){
@@ -133,7 +133,7 @@
         }
       }
       se(sangramento == "verdadeiro"){
-        escreva("seu inimigo está sangrando e perde 5 de vida")
+        escreva("\nseu inimigo está sangrando e perde 5 de vida")
         vidaop = vidaop - 5
       }
       danoop = ut.sorteia(30,45)
@@ -147,15 +147,17 @@
                   }
       
       se(vida <= 0 e vidaop <= 0){
-        escreva("ambos morreram")
+        escreva("\nambos morreram")
+      
+      }senao{
       se(vida <=0){
       escreva("\nvocê perdeu")
       ut.aguarde(3000)
-    }
+        }
       se(vidaop <= 0){
       escreva("\nvocê venceu")
       ut.aguarde(3000)
-    }
+        }
       }
     pare
       caso 2:
