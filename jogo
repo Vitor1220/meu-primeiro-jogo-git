@@ -1,16 +1,34 @@
-    programa {
+   programa {
   inclua biblioteca Util --> ut
   inclua biblioteca Texto --> tx
   funcao inicio() {
     inteiro i, opc, opc1, opc2, opc3 = 7, opc4, opc5, opc6
-    inteiro qti[5],vida = 100,dano,vidaop = 100 ,danoop, flechas = 10, esc,explosao
-    cadeia nome = "",arma = "",esp[5],incapaz,sujo
-    enquanto(opc!=5){
+    inteiro qti[5],vida = 100,dano,vidaop = 100 ,danoop, flechas = 10, esc,explosao,turnos
+    cadeia nome = "",arma = "",esp[5],incapaz = "falso",sujo = "falso",sangramento = "falso"
+    
+    escreva("A trama gira em torno de Vincent Reinhardt, um jovem que nasceu na Alemanha e se mudou com sua família para a Itália ainda pequeno.") 
+    ut.aguarde(3000)
+    escreva("\nDesde muito cedo, Vincent é treinado para liderar futuramente o império que hoje é liderado por seu pai, Giovanni de Luca.")
+    ut.aguarde(3000)
+    escreva("\nO império de San Verano, liderado Por Giovanni de Luca, possuía uma aliança sólida com o império de Eisermark, liderado por Damian Krüger, mas de repente tudo mudou.")
+    ut.aguarde(3000)
+    escreva("\nCom rápido crescimento do império de San Verano, devido à excelente liderança de Giovanni,")
+    ut.aguarde(3000)
+    escreva("\nAlgo começou a intrigar seu aliado que tomou uma medida o tanto quanto inconsequente.")
+    ut.aguarde(3000)
+    escreva("\nA dois anos antes do ocorrido, Damian se aliou a um império francês, liderado por Louis Beaumont, com o mesmo objetivo, fazer o império de San Verano cair.")
+    ut.aguarde(3000)
+    escreva("\nDoente e sem condições de continuar liderando o império, Giovanni passou a liderança para seu filho.")
+    ut.aguarde(3000)
+    escreva("\nAgora, ajude Vincent a tomar as decisões certas para que o império não caia.")
+    ut.aguarde(3000)
+    
+    enquanto(opc!=5){     
       limpa()
     para(i = 0;i < 36; i++){
       escreva("=")
       se(i == 18){
-        escreva(" Primeiro Guerreiro Mundial(nome só de exemplo do jogo) ")
+        escreva(" THE REBELLION ")
       }
     }
     escreva("\n1.Jogar")
@@ -32,7 +50,12 @@
 
     escreva()
     escreva("você encontra um guarda no meio do caminho com uma espada em mãos e rosto obscurecido pelo capacete, porém sem nenhuma armadura além do capacete ")
-    ut.aguarde(3000)
+    ut.aguarde(4000)
+    limpa()
+    se(arma == ""){
+    escreva("só para avisar que você está sem arma, então será impossível para você vencer(pois itens ainda estão em desenvolvimento)")
+    ut.aguarde(5000)
+    }
     enquanto(vida > 0 e vidaop > 0){
     limpa()
     escreva(nome,":",vida)
@@ -65,18 +88,20 @@
           }senao{
             se(arma == "arma de fogo"){
               se(sujo == "verdadeiro"){
+                sujo = "falso"
                 explosao = ut.sorteia(0,100)
                 se(explosao >= 50){
                   vida = 0
                   escreva("a sua arma explodiu")
                 }
-              }senao{
+              }senao{ 
+              sujo = "verdadeiro"
+                }
               dano = ut.sorteia(60,85)
               vidaop = vidaop - dano
               escreva("você ataca o guarda e dá:",dano)
-              sujo = "verdadeiro"
               ut.aguarde(3000)
-              }
+             
             }senao{
               se(arma == "arco e flecha"){
                 se(flechas == 0){
@@ -86,13 +111,13 @@
                 vidaop = vidaop - dano
                 flechas = flechas - 1
                 escreva("você ataca o guarda e dá:",dano,"         e você tem:",flechas," flechas")
+                sangramento = "verdadeiro"
                 ut.aguarde(3000)
                 }
               }senao{
                 se(arma == "cajado"){
                   se(incapaz == "verdadeiro"){
                     escreva("você está incapaz de soltar magias por este turno")
-
                   }senao{
                   dano = ut.sorteia(50,74)
                   vidaop = vidaop - dano
@@ -110,6 +135,10 @@
             }
           }
         }
+      }
+      se(sangramento == "verdadeiro"){
+        escreva("seu inimigo está sangrando e perde 5 de vida")
+        vidaop = vidaop - 5
       }
       danoop = ut.sorteia(30,45)
       vida = vida - danoop
@@ -153,7 +182,9 @@
       }
     }
     pare
-    
+    caso 3:
+
+
     caso 2:
     limpa()
     para(i = 0; i <36;i++){
@@ -204,7 +235,7 @@
           arma = "arma de fogo"
           pare
           caso 4:
-          arma = "arco e flecha()"
+          arma = "arco e flecha"
           pare
           caso 5:
           arma = "cajado"
@@ -219,7 +250,7 @@
           escreva("\nArma de fogo: uma arma de longo alcance e precisão perfeita,dano altíssimo, porém precisa de dois turnos para limpar e recarregar(se arma não for limpa tem chance de explodir e causar morte instantânea), mas é uma arma muito recomendada para iniciantes")
           escreva("\nArco e flecha: longo alcance número limitado de munições, porém danos letais, além de tiros não serem certeiros,flechas causam hemorragia,impedindo o inimigo de se curar começará com 20 flechas e após uma batalha recarregará as flechas e ")
           escreva("\nCajado: ataque de longo de alcance dano de fogo dano alto, porém te deixa vulnerável por 1 turno.")
-          escreva("\nO PODER DA AMIZADE:dano baixíssimo, porém quando ficar com vida baixa seu dano aumenta para dano alto. Além disso, poderá sobreviver a um ataque letal com 1 de vida e dar um soco que tem 70% de chance de dar morte instantânea,recomendado para jogadores que são muito muito ruins")            
+          escreva("\nO PODER DA AMIZADE:dano baixíssimo, porém quando ficar com vida baixa seu dano aumenta para dano alto. Além disso, poderá sobreviver a um ataque letal com 1 de vida e dar um soco que tem 70% de chance de dar morte instantânea,recomendado para jogadores que são muito muito ruins (em desenvolvimento)")            
           ut.aguarde(5000)
             }
           }
@@ -590,7 +621,7 @@
       pare
       
 
+          }
+        } 
       }
-    } 
-  }
-}
+    }
