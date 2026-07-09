@@ -1,28 +1,30 @@
-   programa {
+  programa {
   inclua biblioteca Util --> ut
   inclua biblioteca Texto --> tx
   funcao inicio() {
     inteiro i, opc, opc1, opc2, opc3 = 7, opc4, opc5, opc6
     inteiro qti[5],vida = 100,dano,vidaop = 100 ,danoop, flechas = 10, esc,explosao,turnos
     cadeia nome = "",arma = "",esp[5],incapaz = "falso",sujo = "falso",sangramento = "falso"
-    
+    enquanto(opc4 != 1){
     escreva("A trama gira em torno de Vincent Reinhardt, um jovem que nasceu na Alemanha e se mudou com sua família para a Itália ainda pequeno.") 
-    ut.aguarde(3000)
+    ut.aguarde(1)
     escreva("\nDesde muito cedo, Vincent é treinado para liderar futuramente o império que hoje é liderado por seu pai, Giovanni de Luca.")
-    ut.aguarde(3000)
+    ut.aguarde(1)
     escreva("\nO império de San Verano, liderado Por Giovanni de Luca, possuía uma aliança sólida com o império de Eisermark, liderado por Damian Krüger, mas de repente tudo mudou.")
-    ut.aguarde(3000)
+    ut.aguarde(1)
     escreva("\nCom rápido crescimento do império de San Verano, devido à excelente liderança de Giovanni,")
-    ut.aguarde(3000)
+    ut.aguarde(1)
     escreva("\nAlgo começou a intrigar seu aliado que tomou uma medida o tanto quanto inconsequente.")
-    ut.aguarde(3000)
+    ut.aguarde(1)
     escreva("\nA dois anos antes do ocorrido, Damian se aliou a um império francês, liderado por Louis Beaumont, com o mesmo objetivo, fazer o império de San Verano cair.")
-    ut.aguarde(3000)
+    ut.aguarde(1)
     escreva("\nDoente e sem condições de continuar liderando o império, Giovanni passou a liderança para seu filho.")
-    ut.aguarde(3000)
+    ut.aguarde(1)
     escreva("\nAgora, ajude Vincent a tomar as decisões certas para que o império não caia.")
-    ut.aguarde(3000)
-    
+    ut.aguarde(1)
+    escreva("\naperte 1 para ir para o jogo:")
+    leia(opc4) 
+    }
     enquanto(opc!=5){     
       limpa()
     para(i = 0;i < 36; i++){
@@ -33,7 +35,6 @@
     }
     escreva("\n1.Jogar")
     escreva("\n2.Menu de personagens")
-    escreva("\n3.Menu de Itens(em desenvolvimento)")
     escreva("\n4.creditos")
     escreva("\n5.Sair\n")
     leia(opc)
@@ -123,13 +124,8 @@
                   vidaop = vidaop - dano
                   escreva("você ataca o guarda e dá:",dano)
                   ut.aguarde(3000)
+                  }
                   incapaz = "verdadeiro"
-                  }
-                   se(incapaz == "verdadeiro"){
-                    escreva("você agora pode soltar magias de novo")
-                    incapaz = "falso"
-
-                  }
                 }
               }
             }
@@ -144,23 +140,30 @@
       vida = vida - danoop
       escreva("\no seu oponente revida e dá:",danoop)
       ut.aguarde(3000)
+      se(incapaz == "verdadeiro"){
+                    escreva("você agora pode soltar magias de novo")
+                    incapaz = "falso"
+
+                  }
       
-    
+      se(vida <= 0 e vidaop <= 0){
+        escreva("ambos morreram")
       se(vida <=0){
       escreva("\nvocê perdeu")
       ut.aguarde(3000)
     }
-    se(vidaop <= 0){
+      se(vidaop <= 0){
       escreva("\nvocê venceu")
       ut.aguarde(3000)
     }
+      }
     pare
       caso 2:
     escreva("\nvocê tenta fugir")
     ut.aguarde(3000)
     esc = ut.sorteia(0,100)
     se(esc >= 50){
-      escreva("\nparabéns você fugiu")
+      escreva("\nparabéns você fugiu(covarde)")
       vidaop = 0
       ut.aguarde(3000)
     }senao{
@@ -293,52 +296,63 @@
         escreva("Agora insira a quantidade desse item(no máximo 1):")
         leia(qti[0])
         esp[4] = "caixa do snake"
+        pare
         caso 2:
         limpa()
         escreva("Agora insira a quantidade desse item(no máximo 3):")
         leia(qti[0])
         esp[0] = "kit de primeiros socorros"
+        pare
         caso 3:
         limpa()
         escreva("Agora insira a quantidade desse item(no máximo 10, porém recomendado não mais que 2):")
         leia(qti[0])
         esp[0] = "bomba"
+        pare
         caso 4:
         limpa()
         escreva("Agora insira a quantidade desse item(no máximo 35):")
         leia(qti[0])
         esp[0] = "pão"
+        pare
         caso 5:
         limpa()
         escreva("Agora insira a quantidade desse item(no máximo 10):")
         leia(qti[0])
         esp[0] = "energético"
+        pare
         caso 6:
         limpa()
         escreva("Agora insira a quantidade desse item(no máximo 5):")
         leia(qti[0])
         esp[0] = "veneno"
+        pare
         caso 7:
         limpa()
         escreva("Agora insira a quantidade desse item(no máximo 4):")
         leia(qti[0])
         esp[0] = "bomba de fumaça"
+        pare
         caso 8:
         limpa()
         escreva("Agora insira a quantidade desse item(no máximo 10):")
         leia(qti[0])
         esp[0] = "bomba de luz"
+        pare
         caso 9:
         limpa()
         escreva("Agora insira a quantidade desse item(no máximo 20):")
         leia(qti[0])
         esp[0] = "bandagem"
+        pare
         caso 10:
         limpa()
         escreva("Agora insira a quantidade desse item(no máximo 5):")
         leia(qti[0])
         esp[0] = "antídoto"
+        pare
         }
+        pare
         caso 2:
        escreva("1.caixa do snake - te deixa invisível por 1 turno")
        escreva("\n2.kit de primeiros socorros - cura a metade da vida ,se estiver com hemorragia cura ela ,mas não regenera vida")
@@ -359,52 +373,63 @@
         escreva("Agora insira a quantidade desse item(no máximo 1):")
         leia(qti[1])
         esp[1] = "caixa do snake"
+        pare
         caso 2:
         limpa()
         escreva("Agora insira a quantidade desse item(no máximo 3):")
         leia(qti[1])
         esp[1] = "kit de primeiros socorros"
+        pare
         caso 3:
         limpa()
         escreva("Agora insira a quantidade desse item(no máximo 10, porém recomendado não mais que 2):")
         leia(qti[1])
         esp[1] = "bomba"
+        pare
         caso 4:
         limpa()
         escreva("Agora insira a quantidade desse item(no máximo 35):")
         leia(qti[1])
         esp[1] = "pão"
+        pare
         caso 5:
         limpa()
         escreva("Agora insira a quantidade desse item(no máximo 10):")
         leia(qti[1])
         esp[1] = "energético"
+        pare
         caso 6:
         limpa()
         escreva("Agora insira a quantidade desse item(no máximo 5):")
         leia(qti[1])
         esp[1] = "veneno"
+       pare
         caso 7:
         limpa()
         escreva("Agora insira a quantidade desse item(no máximo 4):")
         leia(qti[1])
         esp[1] = "bomba de fumaça"
+       pare
         caso 8:
         limpa()
         escreva("Agora insira a quantidade desse item(no máximo 10):")
         leia(qti[1])
         esp[1] = "bomba de luz"
+        pare
         caso 9:
         limpa()
         escreva("Agora insira a quantidade desse item(no máximo 20):")
         leia(qti[1])
         esp[1] = "bandagem"
+       pare
         caso 10:
         limpa()
         escreva("Agora insira a quantidade desse item(no máximo 5):")
         leia(qti[1])
         esp[1] = "antídoto"
+        pare
         }
+        pare
         caso 3:
        escreva("1.caixa do snake - te deixa invisível por 1 turno")
        escreva("\n2.kit de primeiros socorros - cura a metade da vida ,se estiver com hemorragia cura ela ,mas não regenera vida")
@@ -425,52 +450,63 @@
         escreva("Agora insira a quantidade desse item(no máximo 1):")
         leia(qti[2])
         esp[2] = "caixa do snake"
+        pare
         caso 2:
         limpa()
         escreva("Agora insira a quantidade desse item(no máximo 3):")
         leia(qti[2])
         esp[2] = "kit de primeiros socorros"
+        pare
         caso 3:
         limpa()
         escreva("Agora insira a quantidade desse item(no máximo 10, porém recomendado não mais que 2):")
         leia(qti[2])
         esp[2] = "bomba"
+        pare
         caso 4:
         limpa()
         escreva("Agora insira a quantidade desse item(no máximo 35):")
         leia(qti[2])
         esp[2] = "pão"
+        pare
         caso 5:
         limpa()
         escreva("Agora insira a quantidade desse item(no máximo 10):")
         leia(qti[2])
         esp[2] = "energético"
+        pare
         caso 6:
         limpa()
         escreva("Agora insira a quantidade desse item(no máximo 5):")
         leia(qti[2])
         esp[2] = "veneno"
+        pare
         caso 7:
         limpa()
         escreva("Agora insira a quantidade desse item(no máximo 4):")
         leia(qti[2])
         esp[2] = "bomba de fumaça"
+       pare
         caso 8:
         limpa()
         escreva("Agora insira a quantidade desse item(no máximo 10):")
         leia(qti[2])
         esp[2] = "bomba de luz"
+       pare
         caso 9:
         limpa()
         escreva("Agora insira a quantidade desse item(no máximo 20):")
         leia(qti[2])
         esp[2] = "bandagem"
+        pare
         caso 10:
         limpa()
         escreva("Agora insira a quantidade desse item(no máximo 5):")
         leia(qti[2])
         esp[2] = "antídoto"
+        pare
         }
+        pare
         caso 4:
        escreva("1.caixa do snake - te deixa invisível por 1 turno")
        escreva("\n2.kit de primeiros socorros - cura a metade da vida ,se estiver com hemorragia cura ela ,mas não regenera vida")
@@ -491,52 +527,63 @@
         escreva("Agora insira a quantidade desse item(no máximo 1):")
         leia(qti[3])
         esp[3] = "caixa do snake"
+        pare
         caso 2:
         limpa()
         escreva("Agora insira a quantidade desse item(no máximo 3):")
         leia(qti[3])
         esp[3] = "kit de primeiros socorros"
+        pare
         caso 3:
         limpa()
         escreva("Agora insira a quantidade desse item(no máximo 10, porém recomendado não mais que 2):")
         leia(qti[3])
         esp[3] = "bomba"
+       pare
         caso 4:
         limpa()
         escreva("Agora insira a quantidade desse item(no máximo 35):")
         leia(qti[3])
         esp[3] = "pão"
+        pare
         caso 5:
         limpa()
         escreva("Agora insira a quantidade desse item(no máximo 10):")
         leia(qti[3])
         esp[3] = "energético"
+        pare
         caso 6:
         limpa()
         escreva("Agora insira a quantidade desse item(no máximo 5):")
         leia(qti[3])
         esp[3] = "veneno"
+        pare
         caso 7:
         limpa()
         escreva("Agora insira a quantidade desse item(no máximo 4):")
         leia(qti[3])
         esp[3] = "bomba de fumaça"
+        pare
         caso 8:
         limpa()
         escreva("Agora insira a quantidade desse item(no máximo 10):")
         leia(qti[3])
         esp[3] = "bomba de luz"
+        pare
         caso 9:
         limpa()
         escreva("Agora insira a quantidade desse item(no máximo 20):")
         leia(qti[3])
         esp[3] = "bandagem"
+        pare
         caso 10:
         limpa()
         escreva("Agora insira a quantidade desse item(no máximo 5):")
         leia(qti[3])
         esp[3] = "antídoto"
+        pare
         }
+        pare
         caso 5:
        escreva("1.caixa do snake - te deixa invisível por 1 turno")
        escreva("\n2.kit de primeiros socorros - cura a metade da vida ,se estiver com hemorragia cura ela ,mas não regenera vida")
@@ -557,52 +604,63 @@
         escreva("Agora insira a quantidade desse item(no máximo 1):")
         leia(qti[4])
         esp[4] = "caixa do snake"
+        pare
         caso 2:
         limpa()
         escreva("Agora insira a quantidade desse item(no máximo 3):")
         leia(qti[4])
         esp[4] = "kit de primeiros socorros"
+       pare
         caso 3:
         limpa()
         escreva("Agora insira a quantidade desse item(no máximo 10, porém recomendado não mais que 2):")
         leia(qti[4])
         esp[4] = "bomba"
+        pare
         caso 4:
         limpa()
         escreva("Agora insira a quantidade desse item(no máximo 35):")
         leia(qti[4])
         esp[4] = "pão"
+        pare
         caso 5:
         limpa()
         escreva("Agora insira a quantidade desse item(no máximo 10):")
         leia(qti[4])
         esp[4] = "energético"
+        pare
         caso 6:
         limpa()
         escreva("Agora insira a quantidade desse item(no máximo 5):")
         leia(qti[4])
         esp[4] = "veneno"
+        pare
         caso 7:
         limpa()
         escreva("Agora insira a quantidade desse item(no máximo 4):")
         leia(qti[4])
         esp[4] = "bomba de fumaça"
+       pare
         caso 8:
         limpa()
         escreva("Agora insira a quantidade desse item(no máximo 10):")
         leia(qti[4])
         esp[4] = "bomba de luz"
+        pare
         caso 9:
         limpa()
         escreva("Agora insira a quantidade desse item(no máximo 20):")
         leia(qti[4])
         esp[4] = "bandagem"
+        pare
         caso 10:
         limpa()
         escreva("Agora insira a quantidade desse item(no máximo 5):")
         leia(qti[4])
         esp[4] = "antídoto"
+        pare
         }
+        pare
        }      
       }
       pare
