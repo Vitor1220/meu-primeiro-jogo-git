@@ -196,6 +196,9 @@
     pare
     caso 3:
     limpa()
+    se(esp[0] == "" e esp[1] == "" e esp[2] == "" e esp[3] == "" e esp[4] == ""){
+      escreva("seu inventário está vazio")
+    }
     se(opc == 6){
       opc = 0
     }
@@ -234,13 +237,17 @@
             dano = ut.sorteia(70,100)
             vidaop = vidaop - dano
              escreva(dano," de dano ao seu oponente")
+             qti[0] = qti[0] - 1
+             se(qti[0] <= 0 ){
+              esp[0] = ""
+             }
           }senao{
             se(esp[0] == "pão"){
               vida = vida + 5
           se(vida > 100){
             vida = 100
           }
-          escreva("você usou o kit médico...\ne curou 50 de vida")
+          escreva("você usou o pão...\ne curou 5 de vida")
           qti[0] = qti[0] - 1
 
             }senao{
@@ -249,11 +256,202 @@
           se(vida > 100){
             vida = 100
           }
+          escreva("você usou a bandagem...\ne curou 25 de vida")
+          qti[0] = qti[0] - 1
               }
             }
           }
         }
       }
+      pare
+      caso 2:
+      se(esp[1] == ""){
+        escreva("esse espaço está vazio")
+      }senao{
+        se(esp[1] == "kit de primeiros socorros"){
+          vida = vida + 50
+          se(vida > 100){
+            vida = 100
+          }
+          escreva("você usou o kit médico...\ne curou 50 de vida")
+          qti[1] = qti[1] - 1
+        }senao{
+          se(esp[1] == "bomba"){
+            escreva("a bomba explode e dá:") 
+            dano = ut.sorteia(70,100)
+            vida = vida - dano
+            escreva(dano," de dano a você")
+            dano = ut.sorteia(70,100)
+            vidaop = vidaop - dano
+             escreva(dano," de dano ao seu oponente")
+             qti[1] = qti[1] - 1
+             se(qti[1] <= 0 ){
+              esp[1] = ""
+             }
+          }senao{
+            se(esp[1] == "pão"){
+              vida = vida + 5
+          se(vida > 100){
+            vida = 100
+          }
+          escreva("você usou o pão...\ne curou 5 de vida")
+          qti[1] = qti[1] - 1
+
+            }senao{
+              se(esp[1] == "bandagem"){
+                 vida = vida + 25
+          se(vida > 100){
+            vida = 100
+          }
+          escreva("você usou a bandagem...\ne curou 25 de vida")
+          qti[1] = qti[1] - 1
+              }
+            }
+          }
+        }
+      }
+      pare
+      caso 3:
+      se(esp[2] == ""){
+        escreva("esse espaço está vazio")
+      }senao{
+        se(esp[2] == "kit de primeiros socorros"){
+          vida = vida + 50
+          se(vida > 100){
+            vida = 100
+          }
+          escreva("você usou o kit médico...\ne curou 50 de vida")
+          qti[2] = qti[2] - 1
+        }senao{
+          se(esp[2] == "bomba"){
+            escreva("a bomba explode e dá:") 
+            dano = ut.sorteia(70,100)
+            vida = vida - dano
+            escreva(dano," de dano a você")
+            dano = ut.sorteia(70,100)
+            vidaop = vidaop - dano
+             escreva(dano," de dano ao seu oponente")
+             qti[2] = qti[2] - 1
+             se(qti[2] <= 0 ){
+              esp[2] = ""
+             }
+          }senao{
+            se(esp[2] == "pão"){
+              vida = vida + 5
+          se(vida > 100){
+            vida = 100
+          }
+          escreva("você usou o pão...\ne curou 5 de vida")
+          qti[2] = qti[2] - 1
+
+            }senao{
+              se(esp[2] == "bandagem"){
+                 vida = vida + 25
+          se(vida > 100){
+            vida = 100
+          }
+          escreva("você usou a bandagem...\ne curou 25 de vida")
+          qti[2] = qti[2] - 1
+              }
+            }
+          }
+        }
+      }
+      pare
+      caso 4:
+      se(esp[3] == ""){
+        escreva("esse espaço está vazio")
+      }senao{
+        se(esp[3] == "kit de primeiros socorros"){
+          vida = vida + 50
+          se(vida > 100){
+            vida = 100
+          }
+          escreva("você usou o kit médico...\ne curou 50 de vida")
+          qti[3] = qti[3] - 1
+        }senao{
+          se(esp[3] == "bomba"){
+            escreva("a bomba explode e dá:") 
+            dano = ut.sorteia(70,100)
+            vida = vida - dano
+            escreva(dano," de dano a você")
+            dano = ut.sorteia(70,100)
+            vidaop = vidaop - dano
+             escreva(dano," de dano ao seu oponente")
+             qti[3] = qti[3] - 1
+             se(qti[3] <= 0 ){
+              esp[3] = ""
+             }
+          }senao{
+            se(esp[3] == "pão"){
+              vida = vida + 5
+          se(vida > 100){
+            vida = 100
+          }
+          escreva("você usou o pão...\ne curou 5 de vida")
+          qti[3] = qti[3] - 1
+
+            }senao{
+              se(esp[3] == "bandagem"){
+                 vida = vida + 25
+          se(vida > 100){
+            vida = 100
+          }
+          escreva("você usou a bandagem...\ne curou 25 de vida")
+          qti[3] = qti[3] - 1
+              }
+            }
+          }
+        }
+      }
+      pare
+      caso 5:
+      se(esp[4] == ""){
+        escreva("esse espaço está vazio")
+      }senao{
+        se(esp[4] == "kit de primeiros socorros"){
+          vida = vida + 50
+          se(vida > 100){
+            vida = 100
+          }
+          escreva("você usou o kit médico...\ne curou 50 de vida")
+          qti[4] = qti[4] - 1
+        }senao{
+          se(esp[4] == "bomba"){
+            escreva("a bomba explode e dá:") 
+            dano = ut.sorteia(70,100)
+            vida = vida - dano
+            escreva(dano," de dano a você")
+            dano = ut.sorteia(70,100)
+            vidaop = vidaop - dano
+             escreva(dano," de dano ao seu oponente")
+             qti[4] = qti[0] - 1
+             se(qti[4] <= 0 ){
+              esp[4] = ""
+             }
+          }senao{
+            se(esp[4] == "pão"){
+              vida = vida + 5
+          se(vida > 100){
+            vida = 100
+          }
+          escreva("você usou o pão...\ne curou 5 de vida")
+          qti[4] = qti[4] - 1
+
+            }senao{
+              se(esp[4] == "bandagem"){
+                 vida = vida + 25
+          se(vida > 100){
+            vida = 100
+          }
+          escreva("você usou a bandagem...\ne curou 25 de vida")
+          qti[4] = qti[4] - 1
+              }
+            }
+          }
+        }
+      }
+      pare
     }
     }
     pare
@@ -270,6 +468,7 @@
         escreva(" Menu de criação de personagem ")
       }
     }
+    pare
     enquanto(opc2 != 3){
       limpa()
       escreva("1.nome:",nome)
@@ -546,4 +745,5 @@
           } 
         }
       }
+    }
     }
