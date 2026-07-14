@@ -1,4 +1,4 @@
-  programa {
+    programa {
   inclua biblioteca Util --> ut
   inclua biblioteca Texto --> tx
   funcao inicio() {
@@ -261,6 +261,9 @@
     }
     caso 2:
     limpa()
+    se(opc2 == 3){
+          opc2 = 0
+        }
     para(i = 0; i <36;i++){
       escreva("=")
       se(i == 18){
@@ -282,6 +285,9 @@
         pare
        
         caso 2:
+        se(opc3 != 6){
+          opc3 = 6
+        }
         limpa()
         enquanto(opc3 == 6){
         para(i = 0; i < 40; i++){
@@ -333,6 +339,9 @@
     
       caso 3:
       limpa()
+      se(opc5 == 6){
+        opc5 = 0
+      }
       enquanto(opc5 != 6){
         limpa()
       escreva("Espaço 1:",esp[0]," ",qti[0])
